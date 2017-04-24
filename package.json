@@ -1,0 +1,20 @@
+{
+  "name": "totp",
+  "version": "1.0.0",
+  "description": "QR code for totp",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "qrcode": "0.8.1"
+  },
+  "engines": {
+    "node": "6.10.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/totp"
+  },
+  "license": "MIT"
+}

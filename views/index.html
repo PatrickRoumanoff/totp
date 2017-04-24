@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TOPT QR Code Generator with an API</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.glitch.com/5266705b-5e64-4107-817a-1d5f6350b1ac%2Ffavicon-96x96.png?1493035108772">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.glitch.com/5266705b-5e64-4107-817a-1d5f6350b1ac%2Ffavicon-32x32.png?1493035108664">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.glitch.com/5266705b-5e64-4107-817a-1d5f6350b1ac%2Ffavicon-16x16.png?1493035108577">
+    <link rel="icon" type="image/x-icon" id="favicon" href="https://cdn.glitch.com/5266705b-5e64-4107-817a-1d5f6350b1ac%2Ffavicon.ico?1493035108620">
+    
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>TOPT QR code Generator with an API</h1>
+    </header>
+    <main>
+      <p class="bold">If you give me a label and a secret, I will generate a TOPT QR Code that you can scan with any Google Authenticator compatible scanner (including Auhty and 1password)</p>
+      <p>
+        The simplified <a href="https://github.com/google/google-authenticator/wiki/Key-Uri-Format">URI</a> format is: <code>otpauth://totp/[label]?secret=[secret]</code>
+      </p>
+      <p>
+        The label istself can include an issuer and account as in <code>issuer:account</code>
+      </p>
+      <p>Give me a label and a secret:</p>
+      <form>
+        <input type="text" id="label"   placeholder="label">
+        <input type="text" id="secret" placeholder="secret">
+      </form>
+    </main>
+    <img id="qr" src="/totp/label/secret"><br>
+    <a id="url" href="otpauth://totp/label?secret=secret">otpauth://totp/label?secret=secret</a>
+
+    <h2>
+      API
+    </h2>
+    <p>
+      The api is available through a <code>GET</code> request to <code>https://totp.glitch.me/totp/[label]/[secret]</code> it will simply return the image for the qr code.
+    </p>
+      This was inspired by <code>https://chart.googleapis.com/chart?chs=256x256&cht=qr&chl=otpauth://totp/label?secret=secret</code> but is marked as deprecated since April 2015.
+    <footer>
+      <a href="https://glitch.com/edit/#!/totp">
+        Remix this in Glitch
+      </a>
+    </footer>
+
+    <script src="/client.js"></script>
+  </body>
+</html>
