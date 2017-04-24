@@ -1,4 +1,3 @@
-
 (function() {
   var label = document.getElementById("label");
   var secret =  document.getElementById("secret");
